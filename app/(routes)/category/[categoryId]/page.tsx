@@ -18,7 +18,7 @@ interface CategoryPageProps {
 	}
 }
 
-const CaategoryPage: React.FC<CategoryPageProps> = async ({
+const CategoryPage: React.FC<CategoryPageProps> = async ({
 	params,
 	searchParams,
 }) => {
@@ -69,4 +69,4 @@ const CaategoryPage: React.FC<CategoryPageProps> = async ({
 	)
 }
 
-export default CaategoryPage
+export default CategoryPage
