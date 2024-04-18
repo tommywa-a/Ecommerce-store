@@ -26,6 +26,7 @@ const CartItem: React.FC<CartItemProps> = ({
           className='object-cover object-center'
         />
       </div>
+      div
     </li>
   )
 }

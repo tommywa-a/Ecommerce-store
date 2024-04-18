@@ -1,4 +1,4 @@
-"useClient"
+"use client"
 
 import Container from '@/components/ui/container'
 import useCart from '@/hooks/use-cart'
@@ -7,6 +7,7 @@ import CartItem from './components/cart-item'
 
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false)
+  const cart = useCart()
 
   useEffect(() => {
     setIsMounted(true)
@@ -16,7 +17,6 @@ const CartPage = () => {
     return null
   }
 
-  const cart = useCart()
 
   return (
     <div className='bg-white'>
