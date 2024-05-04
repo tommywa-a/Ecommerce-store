@@ -14,10 +14,13 @@ const CartPage = () => {
 	useEffect(() => {
 		setIsMounted(true)
 	}, [])
+	
+	throw new Error('Something went wrong')
 
 	if (!isMounted) {
 		return <Loader />
 	}
+
 
 	return (
 		<div className='bg-white'>
