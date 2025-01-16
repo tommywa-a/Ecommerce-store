@@ -34,12 +34,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
 			/>
 			<div className='w-64 mt-4 flex justify-center'>
 				{showReset && (
-					<Button
-						children='Go back to the previous page'
-						onClick={() => {
-							router.back()
-						}}
-					/>
+					<Button onClick={() => router.back()}>Go back to the previous page</Button>
 				)}
 			</div>
 		</div>
