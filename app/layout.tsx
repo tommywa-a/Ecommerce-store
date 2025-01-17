@@ -12,8 +12,8 @@ export const revalidate = 0
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ecommerce Store",
-  description: "Ecommerce Store",
+  title: "OoaK Ecommerce Store",
+  description: "One of a Kind Ecommerce Store",
 };
 
 export default function RootLayout({
