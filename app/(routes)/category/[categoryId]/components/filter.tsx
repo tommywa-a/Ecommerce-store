@@ -49,7 +49,7 @@ const Filter: React.FC<FilterProps> = ({ data, name, valueKey }) => {
         {data.map((filter) => (
           <div key={filter.id} className='flex items-center'>
             <Button 
-							className={cn("rounded-md text-sm text-gray-800 p-2 bg-white border border-gray-300", selectedValue === filter.id && "bg-black text-white")}
+							className={cn("rounded-md text-sm text-gray-800 p-2 mr-2 bg-white border border-gray-300", selectedValue === filter.id && "bg-black text-white")}
 							onClick={() => onClick(filter.id)}	
 						>
               {filter.name}

@@ -43,7 +43,7 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
             </div>
 
             {/* Render the filter */}
-            <div className='py-4'>
+            <div className='py-4 pl-4'>
               <Filter
 								valueKey='sizeId'
 								name='Sizes'
