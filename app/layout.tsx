@@ -9,8 +9,6 @@ import ToastProvider from "@/providers/toast-provider";
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-export const revalidate = 0
-
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
