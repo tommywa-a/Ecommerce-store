@@ -21,9 +21,20 @@ const getProducts = async (query: Query): Promise<Product[]> => {
       isFeatured: query.isFeatured
     }
   })
-	const res = await fetch(url, { cache: 'no-cache' })
 
-	return res.json()
+  try {
+    const res = await fetch(url, { cache: 'no-cache' })
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch products: ${res.status} ${res.statusText}`)
+    }
+
+    return res.json()
+  } catch (error) {
+    console.error(error)
+    throw error
+  }
 }
 
 export default getProducts
+
