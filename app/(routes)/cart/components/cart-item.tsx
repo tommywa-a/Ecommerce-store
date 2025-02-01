@@ -2,15 +2,15 @@
 
 import Image from 'next/image'
 import { toast } from 'react-hot-toast'
-import { X } from 'lucide-react'
+import { X, Plus, Minus } from 'lucide-react'
 
 import IconButton from '@/components/ui/icon-button'
 import Currency from '@/components/ui/currency'
 import useCart from '@/hooks/use-cart'
-import { Product } from '@/types'
+import { CartItem as CartItemType } from '@/types'
 
 interface CartItemProps {
-	data: Product
+	data: CartItemType
 }
 
 const CartItem: React.FC<CartItemProps> = ({ data }) => {
@@ -18,6 +18,16 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
 
 	const onRemove = () => {
 		cart.removeItem(data.id)
+	}
+
+	const onIncreaseQuantity = () => {
+		cart.updateQuantity(data.id, data.quantity + 1)
+	}
+
+	const onDecreaseQuantity = () => {
+		if (data.quantity > 1) {
+			cart.updateQuantity(data.id, data.quantity - 1)
+		}
 	}
 
 	return (
@@ -48,7 +58,18 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
 							{data.size?.name}
 						</p>
 					</div>
-					<Currency value={data.price} />
+					<div className='flex items-center mt-2'>
+						<IconButton
+							onClick={onDecreaseQuantity}
+							icon={<Minus size={15} />}
+						/>
+						<span className='mx-2 text-gray-600'>{data.quantity}</span>
+						<IconButton
+							onClick={onIncreaseQuantity}
+							icon={<Plus size={15} />}
+						/>
+					</div>
+					<Currency value={Number(data.price) * data.quantity} />
 				</div>
 			</div>
 		</li>

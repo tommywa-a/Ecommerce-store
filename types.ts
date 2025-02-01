@@ -40,3 +40,7 @@ export interface Color {
   name: string
   value: string
 }
+
+export interface CartItem extends Product {
+  quantity: number
+}
